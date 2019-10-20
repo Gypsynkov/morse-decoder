@@ -40,17 +40,17 @@ const MORSE_TABLE = {
 function decode(expr) {
     var arr = expr.match(/.{10}/g);
     var results = [];
-    console.log(arr);
+   
     for (let i = 0; i < arr.length; i++) {
         var resultArr = arr[i].replace(/^0+/gm, "")
         .replace(/10/gm, ".")
         .replace(/11/gm, "-");
-        console.log(resultArr);
+      
         if (arr[i] === "**********") {
             results.push(" ");
         } else {
             results.push(MORSE_TABLE[resultArr]);
-            console.log(results);
+         
         }
     }
     return results.join("");
